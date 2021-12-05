@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSearchArticles } from "../../redux/article/articleOperation";
 import { getArticles } from "../../redux/article/articleSelector";
 
-import { InputLabel } from "@mui/material";
-import { TextField } from "@mui/material";
+
+import { IconButton, InputBase, InputLabel, Paper } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 import "./SearchForm.scss";
-import { height } from "@mui/system";
+
+
 
 export default function SearchForm() {
   const [data, setData] = useState("");
@@ -25,20 +27,31 @@ export default function SearchForm() {
   };
 
   return (
-    <>
-      <span>Filter by keywords</span>
-      <TextField
-        id="outlined-basic"
-        label="Search"
-        variant="outlined"
-        size="small"
-        type="text"
-        name="name"
-        value={data}
-        onChange={changeData}
-        onBlur={searchArticles}
+    <div className="search-form">
+    <InputLabel className='search-label' >Filter by keywords</InputLabel>
+      
+   <Paper
+      component="form"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 600, height: 50 }}
+      type="text"
+      name="name"
+      value={data}
+      onChange={changeData}
+      onBlur={searchArticles}
+    >
+      <IconButton sx={{ p: '10px' }} aria-label="menu">
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search"
+        inputProps={{ 'aria-label': 'search' }}
       />
+    </Paper>
+
       <p>Results: {articles.length > 0 && <span> {articles.length}</span>} </p>
-    </>
+      
+   
+    </div>
   );
 }
