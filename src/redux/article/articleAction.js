@@ -19,3 +19,6 @@ export const fetchArticleByIdSuccess = createAction(
 export const fetchArticleByIdError = createAction(
   "articles/fetchArticleByIdError"
 );
+
+
+export const filterArticle = createAction('article/filter');

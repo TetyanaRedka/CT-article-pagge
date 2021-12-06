@@ -3,19 +3,30 @@ import { useDispatch } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-
-// const Homepage = lazy(() => import("./views/Homepage"));
-
-import HomePage from "./components/HomePage/HomePage";
 import ArticlePage from "./components/ArticlePage/ArticlePage";
 import { fetchArticles } from "./redux/article/articleOperation";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const HomePage = lazy(() => import("./components/HomePage/HomePage"));
+
 const theme = createTheme({
   typography: {
-    fontFamily: 'Montserrat, sans-serif'
+    fontFamily: "Montserrat, sans-serif",
   },
-  spacing: 5
+  palette: {
+    primary: {
+      main: "#363636",
+    },
+    text: {
+      primary: "#363636",
+    },
+    typography: {
+      h5: {
+        lineHeight: "1.2",
+      },
+    },
+  },
 });
 
 export default function App() {

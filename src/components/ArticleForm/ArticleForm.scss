@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .card {
   .card-content {
     padding: 25px;
@@ -6,8 +8,6 @@
   .article-date {
     margin-bottom: 24px;
     font-size: 14px;
-    line-height: 150%;
-    color: #363636;
 
     &::before {
       content: "";
@@ -18,5 +18,17 @@
       height: 16px;
       display: inline-block;
     }
+  }
+
+  .article-description {
+    display: inline-block;
+  }
+
+  .link {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: auto;
+    color: $primaryTextColor;
   }
 }
