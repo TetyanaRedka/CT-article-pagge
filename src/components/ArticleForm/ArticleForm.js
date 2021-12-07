@@ -1,6 +1,6 @@
 import Highlighter from "react-highlight-words";
 
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardActions, CardMedia, Typography } from "@mui/material";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import "./ArticleForm.scss";
@@ -15,7 +15,6 @@ export default function ArticleForm({ article, searchData }) {
     <Card
       sx={{
         maxWidth: 400,
-        height: 530,
       }}
       className="card"
     >
@@ -34,7 +33,7 @@ export default function ArticleForm({ article, searchData }) {
           {moment(article.publishedAt).format("MMMM Do, YYYY")}
         </Typography>
 
-        <Typography variant="h5" color="text.primary">
+        <Typography variant="h6" color="text.primary">
           <Highlighter
             highlightClassName="YourHighlightClass"
             searchWords={searchData}
@@ -55,7 +54,8 @@ export default function ArticleForm({ article, searchData }) {
             textToHighlight={text}
           />
         </Typography>
-
+        </CardContent>
+        <CardActions className="link-action">
         <Link
           className="link"
           to={{
@@ -64,7 +64,7 @@ export default function ArticleForm({ article, searchData }) {
         >
           Read more
         </Link>
-      </CardContent>
+        </CardActions>
     </Card>
   );
 }

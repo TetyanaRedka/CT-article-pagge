@@ -25,9 +25,9 @@ export default function ArticlePage() {
         className="image-container"
         style={{ backgroundImage: `url(${article.imageUrl})` }}
       ></div>
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
         <Container
-          maxWidth="sm"
+          maxWidth="lg"
           sx={{ bgcolor: "#FFFFFF" }}
           className="article-card"
         >

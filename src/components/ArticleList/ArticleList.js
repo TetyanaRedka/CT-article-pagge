@@ -28,14 +28,14 @@ const ArticleList = () => {
         )}
       </InputLabel>
 
-      <Grid
+      <Grid className ="article-list"
         container
         spacing={{ xs: 3, md: 5 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {articles.length > 0 &&
           articles.map((article) => (
-            <Grid key={article.id} item xs={4} sm={4} md={4}>
+            <Grid item key={article.id} item xs={4} sm={4} md={4}>
               <ArticleForm article={article} searchData={searchData} />
             </Grid>
           ))}

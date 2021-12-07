@@ -1,8 +1,10 @@
 @import "../../styles/variables";
 
 .card {
+  height: 100%;
+
   .card-content {
-    padding: 25px;
+    padding: 25px 25px 20px 25px;
   }
 
   .article-date {
@@ -23,12 +25,17 @@
   .article-description {
     display: inline-block;
   }
+.link-action{
+  display: block;
+  margin-top: auto;
+  padding: 0px 25px 25px 25px;
+}
 
   .link {
     display: inline-block;
     font-weight: 700;
     font-size: 16px;
-    margin-top: auto;
+
     color: $primaryTextColor;
   }
 }
